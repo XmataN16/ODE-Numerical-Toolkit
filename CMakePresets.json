@@ -1,0 +1,44 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "mingw-debug",
+            "displayName": "MinGW Debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_C_COMPILER": "gcc"
+            },
+            "environment": {
+                "PATH": "C:/msys64/mingw64/bin;$penv{PATH}"
+            }
+        },
+        {
+            "name": "mingw-release",
+            "displayName": "MinGW Release",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_C_COMPILER": "gcc",
+                "BUILD_TESTS": "OFF"
+            },
+            "environment": {
+                "PATH": "C:/msys64/mingw64/bin;$penv{PATH}"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "mingw-debug-build",
+            "configurePreset": "mingw-debug"
+        },
+        {
+            "name": "mingw-release-build",
+            "configurePreset": "mingw-release"
+        }
+    ]
+}
