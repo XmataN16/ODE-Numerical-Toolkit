@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Подключаем наши поддиректории
-add subdirectory(src)
+add_subdirectory(src)
 add_subdirectory(app)
 
 # Включаем тесты, если это не релизная сборка
